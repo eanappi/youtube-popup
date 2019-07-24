@@ -2,12 +2,14 @@ import youtubePlayer from './component/youtubePlayer.js'
 
 // Router
 window.addEventListener('hashchange', () => {
+
   let youtubeURL = location.hash.split('#!/')[1]
 
   if(youtubeURL) {
     youtubePlayer(youtubeURL, '#app')
   } else {
-    document.querySelector('#app').innerText = `Insertar URL`
+    window.location.href = '#!/'
+    document.querySelector('#app').innerText = `Insertar URL luego de #!/[YOUTUBE URL]`
   }
 
 })
